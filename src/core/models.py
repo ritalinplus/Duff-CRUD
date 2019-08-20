@@ -1,12 +1,14 @@
 from django.db import models
 
 
-class Member(models.Model):
-    description = models.CharField(max_length=100)
-    active = models.BooleanField(default=True)
+class User(models.Model):
+    """User model class"""
+    name = models.CharField(max_length=100, help_text='User name')
+    surname = models.CharField(max_length=100, help_text='User surname')
+    iban = models.CharField(max_length=100, help_text='User IBAN')
 
     def __str__(self):
-        return '{}'.format(self.description)
+        return f'{self.name} {self.surname} {self.iban}'
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Users"
