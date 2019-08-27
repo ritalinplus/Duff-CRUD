@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 
-from core.models import User
-from core.serializers import UserSerializer
+from core.models import Client
+from core.serializers import ClientSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class ClientViewSet(viewsets.ModelViewSet):
     """A simple view to allow all CRUD operations"""
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer

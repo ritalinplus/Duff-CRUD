@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class User(models.Model):
+class Client(models.Model):
     """User model class"""
     name = models.CharField(max_length=100, help_text='User name')
     surname = models.CharField(max_length=100, help_text='User surname')
@@ -11,4 +11,4 @@ class User(models.Model):
         return f'{self.name} {self.surname} {self.iban}'
 
     class Meta:
-        verbose_name_plural = "Users"
+        verbose_name_plural = "Clients"
