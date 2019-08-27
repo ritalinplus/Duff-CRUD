@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'social_django',
     'core'
 ]
 
@@ -123,3 +124,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+    'django.contrib.auth.backends.ModelBackend',  # for traditional Django authentication
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '539599580208-kmhih82oiljj1b5s7ooukou96rh6ei1j.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '8WMHzujOL04EAG7lWlK_hGUH'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/api/'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
