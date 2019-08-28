@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from schwifty import IBAN
 
 from core.models import Client
 
@@ -47,6 +48,22 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
         """
         if self._only_letters(surname) is False:
             raise serializers.ValidationError("Only letters allowed")
+
+    def validate_iban(self, iban):
+        """Validates a IBAN account.
+
+        Args:
+            iban (str): iban account to check.
+
+        Raise:
+            ValidationError: if the IBAN has invalid checksum digits or a unknown country-code.
+
+        """
+        try:
+            IBAN(iban)
+
+        except ValueError as e:
+            raise serializers.ValidationError(e)
 
     class Meta:
         model = Client
