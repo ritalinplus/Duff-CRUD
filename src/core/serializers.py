@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from schwifty import IBAN
 
+from core.libraries.stringutils import StringUtils
 from core.models import Client
 
 
@@ -11,19 +12,7 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     @staticmethod
-    def _only_letters(value):
-        """Allow only letters in value parameter.
-
-        Args:
-            value (str): data to check.
-
-        Return:
-            bool: True if string only has letters, False otherwise.
-
-        """
-        return value.isalpha()
-
-    def validate_name(self, name):
+    def validate_name(name):
         """Validates a person name.
 
         Args:
@@ -33,10 +22,13 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
             ValidationError: if name not contains only letters.
 
         """
-        if self._only_letters(name) is False:
+        if StringUtils.only_letters(name) is False:
             raise serializers.ValidationError("Only letters allowed")
 
-    def validate_surname(self, surname):
+        return name
+
+    @staticmethod
+    def validate_surname(surname):
         """Validates a person surname.
 
         Args:
@@ -46,10 +38,13 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
             ValidationError: if surname not contains only letters.
 
         """
-        if self._only_letters(surname) is False:
+        if StringUtils.only_letters(surname) is False:
             raise serializers.ValidationError("Only letters allowed")
 
-    def validate_iban(self, iban):
+        return surname
+
+    @staticmethod
+    def validate_iban(iban):
         """Validates a IBAN account.
 
         Args:
@@ -64,6 +59,8 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
 
         except ValueError as e:
             raise serializers.ValidationError(e)
+
+        return iban
 
     class Meta:
         model = Client
