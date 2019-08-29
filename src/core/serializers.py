@@ -10,6 +10,9 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name="clients-detail",
     )
+    owner = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
 
     @staticmethod
     def validate_name(name):
