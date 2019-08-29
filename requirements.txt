@@ -1,5 +1,11 @@
+# Core
 Django>=2.0,<3.0
 psycopg2>=2.7,<3.0
 djangorestframework==3.9.4
 social-auth-app-django==3.1.0
+
+# Iban Validator
 schwifty==2018.9.1
+
+# Unit tests
+parameterized==0.7.0
