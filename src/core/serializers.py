@@ -22,8 +22,8 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
             ValidationError: if name not contains only letters.
 
         """
-        if StringUtils.only_letters(name) is False:
-            raise serializers.ValidationError("Only letters allowed")
+        if StringUtils.only_letters_and_blanks(name) is False:
+            raise serializers.ValidationError("Only letters and spaces allowed")
 
         return name
 
@@ -38,8 +38,8 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
             ValidationError: if surname not contains only letters.
 
         """
-        if StringUtils.only_letters(surname) is False:
-            raise serializers.ValidationError("Only letters allowed")
+        if StringUtils.only_letters_and_blanks(surname) is False:
+            raise serializers.ValidationError("Only letters and spaces allowed")
 
         return surname
 
