@@ -1,7 +1,15 @@
+from django.conf import settings
 from django.db import models
 
 
-class Client(models.Model):
+class OwnerModel(models.Model):
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+
+class Client(OwnerModel):
     """Client model class"""
     name = models.CharField(max_length=100, help_text='Client first name')
     surname = models.CharField(max_length=100, help_text='Client surname')

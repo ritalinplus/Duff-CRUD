@@ -135,7 +135,16 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '8WMHzujOL04EAG7lWlK_hGUH'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/api/'
-LOGOUT_URL = 'logout'
+LOGOUT_URL = '/'
 LOGOUT_REDIRECT_URL = 'login'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
