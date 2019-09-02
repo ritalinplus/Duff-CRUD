@@ -24,3 +24,8 @@ DATABASES = {
 }
 ```
 
+
+# Dump / restore
+docker exec -t ps01 pg_dump -c -U postgres > test_dump.sql
+
+cat test_dump.sql | docker exec -i ps01 psql -U postgres
