@@ -25,13 +25,13 @@ All field including in the forms used for store client data are validating follo
 
 * Name: only can include letters.
 * Surname: only can include letters.
-* IBAN account: check valid country-code and checksum digits.
+* IBAN account: checks valid country-code and checksum digits.
 
 
 System User Interface
 ======================
 
-Created using DRF default templates to navigate for the browsable API, and a custom login view to allow
+Created using DRF default templates to navigate for the browsable API and a custom login view to allow
 sing in using a google account.
 
 .. image:: _images/api_root.png
@@ -39,19 +39,19 @@ sing in using a google account.
 System API Endpoints
 ======================
 
-Created using DRF, in this section the different endpoints and operation allowed will be explained.
+Created using DRF, in this section the different endpoints and operations allowed will be explained.
 
 **Clients**
 
 ==========   =========================   ================================
 Operation    Endpoint                    Description
 ==========   =========================   ================================
-GET          /v1/clients                 retrieve all stored data
-GET          /v1/clients/[client-id]     retrieve client stored data
-POST         /v1/clients                 insert client stored data
-DELETE       /v1/clients/[client-id]     delete client stored data
-PUT          /v1/clients/[client-id]     update client stored data
-PATCH        /v1/clients/[client-id]     update client stored data
+GET          /v1/clients                 Retrieves all stored data
+GET          /v1/clients/[client-id]     Retrieves client stored data
+POST         /v1/clients                 Inserts client stored data
+DELETE       /v1/clients/[client-id]     Deletes client stored data
+PUT          /v1/clients/[client-id]     Updates client stored data
+PATCH        /v1/clients/[client-id]     Updates client stored data
 ==========   =========================   ================================
 
 
