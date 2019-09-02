@@ -19,7 +19,7 @@ In this section all components of the system's core will be explained.
 
 
 System Validators
-###################
+======================
 
 All field including in the forms used for store client data are validating following this rules.
 
@@ -29,7 +29,7 @@ All field including in the forms used for store client data are validating follo
 
 
 System User Interface
-#######################
+======================
 
 Created using DRF default templates to navigate for the browsable API, and a custom login view to allow
 sing in using a google account.
@@ -37,7 +37,7 @@ sing in using a google account.
 .. image:: _images/api_root.png
 
 System API Endpoints
-#######################
+======================
 
 Created using DRF, in this section the different endpoints and operation allowed will be explained.
 
@@ -54,3 +54,30 @@ PUT          /v1/clients/[client-id]     update client stored data
 PATCH        /v1/clients/[client-id]     update client stored data
 ==========   =========================   ================================
 
+
+System Database
+##################
+
+In this section the system's database will be explained.
+
+Database Models
+======================
+
+**Client Model**
+
+==========   =========================   ================================
+Field        Type                        Description
+==========   =========================   ================================
+name         CharField                   Client name
+surname      CharField                   Client surname
+iban         CharField                   Client IBAN Account
+==========   =========================   ================================
+
+
+**Owner Model**
+
+==========   ============================   ================================
+Field        Type                           Description
+==========   ============================   ================================
+owner        ForeignKey(AUTH_USER_MODEL)    Django User
+==========   ============================   ================================
