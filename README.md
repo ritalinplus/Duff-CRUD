@@ -1,31 +1,45 @@
-# Rindus-CRUD
-Basic credit card CRUD
+# Duff CRUD
+Welcome to Duff CRUD, a easy system to manage clients IBAN accounts.
+
+## Deploy System
+To deploy the system, follow this steps:
+
+1. Clone or Download project from https://github.com/ritalinplus/Rindus-CRUD/tree/feature/create_project_doc,
+then from root project directory:  
+
+    `docker-compose up [-d]`
+
+2. Access using your browser to:
+
+    `http://localhost:8000`
+
+3. Log in using a google account. 
+
+4. Additionally you can export a few client data:
+
+    `cat db/backups/test_dump.sql | docker exec -i ps01 psql -U postgres` 
+
+## Execute unit tests
+
+`docker exec -t dg01 python manage.py test`
+
+## Create project documentation
+
+For Windows
+
+`./doc/make.bat html`
+
+For Linux 
+
+`./doc/make html`
+
+## Useful command
+
+### Create postgres backup
+
+`docker exec -t ps01 pg_dump -c -U postgres > test_dump.sql`
 
 
-## Create django project
-sudo docker-compose run web django-admin startproject rinduscrud
+### Restore postgres backup
 
-## Change user
-sudo chown -R $USER:$USER .
-
-## Connect DB
-
-In composeexample/settings.py
-
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
-}
-```
-
-
-# Dump / restore
-docker exec -t ps01 pg_dump -c -U postgres > test_dump.sql
-
-cat test_dump.sql | docker exec -i ps01 psql -U postgres
+`cat test_dump.sql | docker exec -i ps01 psql -U postgres`
