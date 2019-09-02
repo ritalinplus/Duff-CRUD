@@ -70,6 +70,9 @@ blue button (PUT).
 
 .. image:: _images/clients_put.png
 
+.. note::
+    Update it's only allowed if you are the owner of the client.
+
 Delete client data
 ============================
 
@@ -80,3 +83,6 @@ Choose the client you want delete and pick in url field.
 this show you a new view, then click in the red button (DELETE).
 
 .. image:: _images/clients_delete.png
+
+.. note::
+    Delete it's only allowed if you are the owner of the client.
