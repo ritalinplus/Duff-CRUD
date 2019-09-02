@@ -23,7 +23,7 @@ then you can choose the desired endpoint (clients) and client list will be shown
 Client List View
 ##################
 
-Show all client stored in the system. Consists of 2 component.
+Shows all client stored in the system. Consists of 2 component.
 
 1. view panel, where results are shown
 
@@ -43,7 +43,7 @@ In this section system basic operation will be described
 Retrieve all clients
 ============================
 
-In the client view pick in the top blue button (GET).
+In the client view pick in the blue button GET.
 
 .. image:: _images/clients_get.png
 
@@ -53,7 +53,7 @@ then the client list are shown in the client's view panel.
 Store new clients
 ============================
 
-Fill the client form with the required data and pick in blue down button (POST).
+Fill the client form with the required data and pick in blue button POST.
 
 .. image:: _images/clients_post.png
 
@@ -66,7 +66,7 @@ Choose the client you want update and pick in url field.
 .. image:: _images/clients_select.png
 
 this show you a new view with a new panel at the bottom, change the required data and click in the
-blue button (PUT).
+blue button PUT.
 
 .. image:: _images/clients_put.png
 
@@ -80,7 +80,7 @@ Choose the client you want delete and pick in url field.
 
 .. image:: _images/clients_select.png
 
-this show you a new view, then click in the red button (DELETE).
+this show you a new view, then click in the red button DELETE.
 
 .. image:: _images/clients_delete.png
 
