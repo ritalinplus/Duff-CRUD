@@ -13,7 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path, include, reverse
 from core import views as core_views
 
@@ -23,7 +22,6 @@ urlpatterns = [
     path("login/", core_views.login, name="login"),
     # To add Logout option to browsable API
     path('', include('rest_framework.urls')),
-    path('admin/', admin.site.urls),
     path('api/', include('core.urls')),
     path('social-auth/', include('social_django.urls', namespace="social")),
 ]
