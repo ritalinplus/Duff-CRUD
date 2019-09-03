@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'social_django',
     'core'
 ]
@@ -127,7 +128,7 @@ STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',  # for Google authentication
-    'django.contrib.auth.backends.ModelBackend',  # for traditional Django authentication
+    # 'django.contrib.auth.backends.ModelBackend',  # for traditional Django authentication
 )
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '539599580208-kmhih82oiljj1b5s7ooukou96rh6ei1j.apps.googleusercontent.com'
@@ -147,4 +148,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
+}
+
+SWAGGER_SETTINGS = {
+    'SHOW_REQUEST_HEADERS': True,
+    'SUPPORTED_SUBMIT_METHODS': [
+        'get',
+    ],
+    'SECURITY_DEFINITIONS': None,
 }
