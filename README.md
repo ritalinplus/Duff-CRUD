@@ -23,7 +23,7 @@ then from root project directory:
 
 `docker exec -t dg01 python manage.py test`
 
-## Create project documentation
+## Create project documentation (Sphinx)
 
 For Windows
 
@@ -32,6 +32,9 @@ For Windows
 For Linux 
 
 `./doc/make html`
+
+| NOTE: Sphinx 1.5.6 and sphinx-rtd-theme 0.4.3 is needed |
+| --- |
 
 ## Useful command
 
