@@ -4,8 +4,7 @@ Welcome to Duff CRUD, a easy system to manage clients IBAN accounts.
 ## Deploy System
 To deploy the system, follow this steps:
 
-1. Clone or Download project from https://github.com/ritalinplus/Rindus-CRUD/tree/feature/create_project_doc,
-then from root project directory:  
+1. Clone or Download project, then from root project directory:  
 
     `docker-compose up [-d]`
 
